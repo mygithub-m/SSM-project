@@ -1,0 +1,103 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    width: 100%;
+    height: 557px; 
+    background-color: rgba(238, 238, 238, 0.5);
+    position: relative;
+}
+
+.container .top{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .top .path p{
+  font-size: 18px;
+  color: gray;
+  margin-left: 20px;
+}
+
+.container .top .path p a{
+    text-decoration: none;
+    font-size: 14px;
+    color: gray;
+}
+
+.current{
+    color: black!important;
+}
+
+.container .top .add{
+    width: 100px;
+    height: 30px;
+    margin-right: 20px;
+    background-color: rgba(238, 238, 238, 0.7);
+}
+
+.container .top .add a{
+    display: block;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+}
+
+.container .top .add img{
+    width: 16px;
+    height: 16px;
+}
+
+.container .table table{
+    border: 1px solid gray;
+    width: 700px;
+    margin: 10px auto;
+}
+
+.container .table table tr{
+    height: 40px;
+    color: white;
+    font-weight: 100;
+}
+
+.container .table table tr .caozuo{
+    display: flex;
+    
+}
+.container .table table tr .caozuo a{
+   display: flex;
+   width: 70px;
+   height: 30px;
+   background-color: rgba(0, 128, 225, 0.8);
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   color: white;
+   margin-top: 5px;
+   font-size: 14px;
+}
+
+.container .table table tr .caozuo .update{
+    border-radius: 5px;
+}
+
+.container .table table tr .caozuo .delete{
+    border-radius: 5px;
+    background-color: rgba(237, 56, 56, 1);
+}
+
+.container .table table tr .caozuo a img{
+    width: 15px;
+    height: 15px;
+}
+

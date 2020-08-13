@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+        <!--开启注解配置-->
+       <mvc:annotation-driven/>
+       <!--在哪些包下扫描注解-->
+       <context:component-scan base-package="cn.learn"></context:component-scan>
+
+       <!--定义视图解析器-->
+       <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+           <property name="prefix" value="/WEB-INF/jsp/"></property>
+           <property name="suffix" value=".jsp"></property>
+       </bean>
+
+        <!--开启aop自动代理-->
+        <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <!-- 静态文件映射 -->
+    <mvc:resources location="WEB-INF/js/" mapping="/js/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/css/" mapping="/css/**"></mvc:resources>
+    <mvc:resources location="WEB-INF/img/" mapping="/img/**"></mvc:resources>
+
+</beans>

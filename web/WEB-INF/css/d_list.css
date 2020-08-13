@@ -1,0 +1,100 @@
+
+
+/* 部门表格样式 */
+
+.container .d_table table{
+    width: 400px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.container .d_table table tr{
+    height: 40px;
+    color: white;
+}
+
+.container .d_table table tr .caozuo{
+    width: 230px;
+    display: flex;
+     justify-content: space-around;
+    
+}
+.container .d_table table tr .caozuo a{
+   display: flex;
+   width: 70px;
+   height: 30px;
+   background-color: rgba(0, 128, 225, 0.8);
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   color: white;
+   margin-top: 5px;
+   font-size: 14px;
+}
+
+.container .d_table table tr .caozuo .update{
+    border-radius: 5px;
+}
+
+.container .d_table table tr .caozuo .delete{
+    border-radius: 5px;
+    background-color: rgba(237, 56, 56, 1);
+}
+
+.container .d_table table tr .caozuo .allEmployee{
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-left: 10px; 
+}
+
+.container .d_table table tr .caozuo a img{
+    width: 15px;
+    height: 15px;
+}
+
+.container .e_table{
+    width: 300px;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.8)                                                         ;
+    position: absolute;
+    opacity: 0;
+    top: 61px;
+    right: 20px;
+    transition: all 3s;
+}
+.container .e_table .list{
+    display: none;
+}
+.container .e_table .list .list_top{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+
+.container .e_table .list .list_top span{
+    margin-left: 10px;
+    color: white;
+}
+
+.container .e_table .close{
+   margin-right: 10px;
+   margin-left: 0px;
+   color: black!important;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.container .e_table table{
+    width: 250px;
+    margin: 30px auto;
+    border: 1px solid black;
+}
+
+.container .e_table table tr{
+    height: 35px;
+    background-color: black;
+    color: white;
+}

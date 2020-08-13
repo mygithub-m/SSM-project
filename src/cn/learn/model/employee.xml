@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.learn.model.Employee">
+   <!-- 查询所有员工的信息-->
+    <select id="selectAll" resultMap="employeeMap">
+        select * from employee e,department d where e.d_id = d.d_id order by e.e_id
+    </select>
+    <!--添加员工-->
+    <select id="add" parameterType="Employee">
+        insert into employee(e_name,e_email,d_id) values(#{e_name},#{e_email},#{department.d_id})
+    </select>
+    <!--修改员工信息-->
+    <select id="update" parameterType="Employee">
+        update employee set e_name = #{e_name},e_email = #{e_email},d_id = #{department.d_id} where e_id = #{e_id}
+    </select>
+    <!--删除员工-->
+    <select id="delete" parameterType="int">
+        delete from employee where e_id = #{id}
+    </select>
+    <!--通过员工id查询员工信息-->
+    <select id="selectById" resultMap="employeeMap" parameterType="int">
+        select * from employee e,department d where e.e_id = #{id} and e.d_id = d.d_id
+    </select>
+    <!--根据部门id删除员工-->
+    <select id="deleteByDid" parameterType="int">
+        delete from employee where d_id = #{id}
+    </select>
+    <!--根据部门id查询所有员工-->
+    <select id="selectAllByDid" parameterType="int" resultMap="employeeMap">
+        select * from employee e,department d where e.d_id = d.d_id and e.d_id = #{id}
+    </select>
+
+      <resultMap id="employeeMap" type="Employee">
+          <id property="e_id" column="e_id"></id>
+          <result property="e_name" column="e_name"></result>
+          <result property="e_email" column="e_email"></result>
+          <!--这个比较特殊-->
+          <association property="department" column="d_id" resultMap="departmentMap"></association>
+      </resultMap>
+      <resultMap id="departmentMap" type="Department">
+          <id property="d_id" column="d_id"></id>
+          <result property="d_name" column="d_name"></result>
+      </resultMap>
+</mapper>

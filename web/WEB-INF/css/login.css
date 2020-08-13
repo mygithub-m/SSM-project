@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url("../img/login_back.jpg");
+    background-size: cover;
+}
+
+/* .container{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-items: center;
+} */
+
+.login{
+    width: 500px;
+    height: 400px;
+    /* border: 1px solid purple; */
+    margin: 100px auto;
+    margin-top: 200px;
+    background-image: url("../img/login.png");
+    background-size: 500px 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login table{
+    width: 300px;
+}
+
+.login table tr{
+    height: 50px;
+    line-height: 50px;
+    color: #eee;
+}
+.login table tr input{
+   outline: none;
+}
+
+.login table .btn{
+    width: 70px;
+    height: 30px;
+    font-weight: bold;
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:bean="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd ">
+
+       <!--开启注解配置-->
+       <context:component-scan base-package="cn.learn">
+
+       </context:component-scan>
+
+       <!--数据库配置-->
+       <!--加载数据库配置文件-->
+       <context:property-placeholder location="classpath:JDBC.properties"></context:property-placeholder>
+
+       <!--获取数据源对象-->
+       <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+              <property name="driverClassName" value="${driver}"></property>
+              <property name="url" value="${url}"></property>
+              <property name="password" value="${password}"></property>
+              <property name="username" value="${username}"></property>
+       </bean>
+
+       <!--获取sql执行对象-->
+       <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+              <property name="dataSource" ref="dataSource"></property>
+       </bean>
+
+       <!--Spring整合Mybatis-->
+       <!-- 创建SqlSessionFactory-->
+       <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+              <!--依赖注入-->
+              <!--注入数据源-->
+              <property name="dataSource" ref="dataSource"></property>
+              <property name="mapperLocations" value="classpath:cn/learn/model/*.xml">
+<!--                     <value>cn/learn/model/employee.xml</value>-->
+              </property>
+              <!--取别名-->
+              <property name="typeAliases">
+                    <array>
+                           <value>cn.learn.model.Employee</value>
+                           <value>cn.learn.model.Department</value>
+                           <value>cn.learn.model.Manager</value>
+                    </array>
+              </property>
+       </bean>
+
+
+
+</beans>
