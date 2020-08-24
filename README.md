@@ -6,8 +6,8 @@
    >* 员工、部门添加
    >* 员工、部门删除
 
-> ####技术：html、css、js、jquery、jsp、el表达式、jstl、
->#### ajax、spring、spring mvc、mybatis
+> #### 技术：html、css、js、jquery、jsp、el表达式、jstl、
+> #### ajax、spring、spring mvc、mybatis
    
    
   
